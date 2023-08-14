@@ -1,0 +1,381 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 9%;
+    background-color: var(--white);
+    z-index: 100;
+}
+
+.navbar-top .logo{
+    color: var(--primary);
+    font-family: 'Yeseva One', 'cursive';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+.navbar-top .logo span{
+    color: var(--secondary);
+}
+
+.top-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.top-left .item{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.top-left .item .content p{
+    color: var(--primary);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.top-left .item .content p:last-child{
+    color: var(--secondary);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/********** 
+NavBar Bottom
+**********/
+
+.navbar-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    padding: 20px 9%;
+}
+
+.navbar-bottom .logo{
+    display: none;
+    color: var(--accent);
+    font-family: 'Yeseva One', 'cursive';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-right: 20px;
+    z-index: 10;
+}
+.navbar-bottom .logo span{
+    color: var(--white);
+}
+
+.nav-links{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links .link{
+    color: var(--white);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.nav-links .link:hover,
+.nav-links .link.active{
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.left-side{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    z-index: 10;
+}
+
+.left-side .search-icon{
+    display: inline-flex;
+    font-size: 30px;
+    line-height: 15px;
+    color: var(--white);
+    column-gap: 20px;
+}
+
+.left-side .toggle-menu{
+    display: none;
+}
+
+.left-side .toggle-menu{
+    font-size: 30px;
+    line-height: 15px;
+    color: var(--white) !important;
+}
+
+
+/*********
+ Heading 
+*********/
+.heading .caption{
+    text-align: center;
+    color: var(--secondary);
+}
+
+.heading h2{
+    color: var(--primary);
+    text-align: center;
+}
+
+
+
+/**********
+Booking
+***********/
+.booking-form{
+    flex: 1;
+    z-index: 10;
+}
+
+.booking .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.booking .fields{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+}
+
+.booking .fields input, select{
+    position: absolute;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary);
+    padding: 0 20px;
+    color: var(--white, #FCFEFE);
+
+    font-family: 'Work Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.booking .fields select{
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.booking .fields input, select{
+    border: 0.5px solid #f1f1f1;
+    color: #fff;
+}
+
+.booking .fields input::-webkit-calendar-picker-indicator{
+    background-color: var(--accent);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.booking .fields input::placeholder{
+    color: var(--white);
+}
+
+.booking .fields .field{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+    padding: 0 20px 0 0;
+    background-color: var(--primary);
+    outline: none;
+    color: var(--accent);
+    border: 0.5px solid #f1f1f1;
+}
+
+.booking .fields p{
+    line-height: 50px;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.booking .form .message{
+    width: 100%;
+    height: 190px;
+    text-align: center;
+    background-color: var(--primary);
+    border: 0.5px solid #f1f1f1;
+}
+.booking .form .text{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: var(--white);
+    background-color: var(--primary);
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.booking .form button{
+    width: 100%;
+    height: 50px;
+    align-self: center;
+    color: var(--primary);
+    background-color: var(--accent);
+    outline: none;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1150px) {
+    .navbar-top,
+    .navbar-bottom{
+        padding: 20px 7%;
+    }
+
+    .navbar-top .logo{
+        font-size: 34px;
+    }
+
+    .top-left .item .content p,
+    .top-left .item .content p:last-child{
+        font-size: 14px;
+    }
+    .nav-links .link{
+        font-size: 17px;
+    }
+
+    /*  */
+    .booking .fields{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .navbar-top,
+    .navbar-bottom{
+        padding: 20px 5%;
+    }
+    .navbar-top{
+        justify-content: center;
+    }
+
+    .navbar-top .logo{
+        display: none;
+    }
+
+    .navbar-bottom .logo{
+        font-size: 32px;
+    }
+
+    .top-left .item .content p,
+    .top-left .item .content p:last-child{
+        font-size: 13px;
+    }
+
+    .nav-links{
+        position: absolute;
+        left: 0;
+        top: -150%;
+        width: 100%;
+        height: fit-content;
+        background-color: var(--primary);
+        padding: 20px;
+        z-index: 1;
+        transition: .4s ease-in-out;
+        opacity: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        font-size: 14px;
+        line-height: 40px;
+    }
+    .nav-links.active{
+        top: 100%;
+        opacity: 1;
+    }
+
+    .navbar-bottom .logo{
+        display: inline-flex;
+    }
+
+    .left-side .toggle-menu{
+        display: block;
+    }
+
+    .navbar-bottom .appointment{
+        display: none;
+    }
+
+
+
+}
+
+
+@media screen and (max-width: 650px) {
+    .navbar-top,
+    .navbar-bottom{
+        padding: 20px 3%;
+    }
+
+    .navbar-bottom .logo{
+        font-size: 30px;
+    }
+
+    .top-left .item .content p,
+    .top-left .item .content p:last-child{
+        font-size: 12px;
+    }
+
+    /*  */
+    .specialties-container{
+        display: none;
+    }
+}
