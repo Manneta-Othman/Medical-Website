@@ -1,0 +1,12 @@
+.doctors-page{
+    width: 100%;
+    min-height: calc(100vh - 140px);
+}
+
+.doctors-page .doctors{
+    margin-top: 50px;
+}
+
+.doctors-page .doctors .heading{
+    display: none;
+}

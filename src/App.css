@@ -7,10 +7,15 @@
   --accent: #BFD2F8;
   --primary: #1F2B6C;
   --secondary: #159EEC;
+  --border: #e8e7e7;
 }
 section{
   padding: 20px 9%;
   margin-bottom: 100px;
+}
+
+.padding{
+  padding: 20px 9%;
 }
 
 .btn{
@@ -48,6 +53,7 @@ section{
   gap: 8px;
   transition: 0.3s ease;
   cursor: pointer;
+  border: none;
 
   color: var(--primary, #1F2B6C);
   font-family: 'Work Sans', sans-serif;
@@ -55,12 +61,15 @@ section{
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  text-transform: capitalize;
 }
 
 .more{
   display: flex;
   align-items: center;
   gap: 10px;
+  width: fit-content;
+  cursor: pointer;
 }
 
 .more p{
@@ -71,18 +80,21 @@ h1{
   font-family: 'Yeseva One', 'cursive';
   font-size: 48px;
   font-weight: 400;
+  text-transform: capitalize;
 }
 
 h2{
   font-family: 'Yeseva One', 'cursive';
   font-size: 32px;
   font-weight: 400;
+  text-transform: capitalize;
 }
 
 .title{
   font-family: 'Work Sans', sans-serif;
   font-size: 26px;
   font-weight: 500;
+  text-transform: capitalize;
 }
 
 .caption{
@@ -100,7 +112,7 @@ h2{
   line-height: 140%;
 }
 
-.body2{
+.body2, input, select{
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -115,7 +127,7 @@ h2{
 }
 
 @media screen and (max-width: 1150px) {
-  section{
+  section, .padding{
     padding: 20px 7%;
   }
   
@@ -139,7 +151,7 @@ h2{
     font-size: 16px;
   }
   
-  .body2{
+  .body2, input, select{
     font-size: 15px;
   }
   
@@ -150,7 +162,7 @@ h2{
 
 
 @media screen and (max-width: 950px) {
-  section{
+  section, .padding{
     padding: 20px 5%;
   }
 
@@ -174,7 +186,7 @@ h2{
   .body1{
     font-size: 16px;
   }
-  .body2{
+  .body2, input, select{
     font-size: 14px;
   }
   
@@ -185,7 +197,7 @@ h2{
 
 
 @media screen and (max-width: 650px) {
-  section{
+  section, .padding{
     padding: 20px 3%;
     margin-bottom: 50px;
   }
@@ -210,7 +222,7 @@ h2{
   .body1{
     font-size: 14px;
   }
-  .body2{
+  .body2, input, select{
     font-size: 12px;
   }
   
@@ -240,7 +252,7 @@ h2{
   .body1{
     font-size: 12px;
   }
-  .body2{
+  .body2, input, select{
     font-size: 10px;
   }
   

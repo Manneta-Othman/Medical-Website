@@ -303,7 +303,7 @@ Booking Section
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 100px;
 }
 
 
@@ -316,6 +316,17 @@ Booking Section
     color: var(--secondary);
     line-height: 74px;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -339,6 +350,8 @@ Media Query
     gap: 5px;
     padding: 8px 0;
 }
+
+/*  */
 
 }
 
@@ -400,6 +413,8 @@ Media Query
         align-items: stretch;
         gap: 20px;
     }
+
+
 }
 
 @media screen and (max-width: 650px) {
@@ -442,6 +457,18 @@ Media Query
         flex-direction: row;
         grid-template-columns: repeat(2, 157px);
     }
+    /*  */
+    .specialties-container{
+        display: none;
+    }
+
+    .booking .content{
+        text-align: center;
+    }
+
+
+
+
 }
 
 @media screen and (max-width: 450px) {

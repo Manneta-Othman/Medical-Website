@@ -1,0 +1,138 @@
+.contact-page{
+    width: 100%;
+    min-height: calc(100vh - 140px);
+    margin-bottom: 64px;
+}
+
+.contact-page section{
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.contact-page-container{
+    height: auto;
+}
+
+.contact-page .sub-header .image img{
+    object-position: 0;
+}
+
+.contact-page .contact-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 64px 0;
+}
+
+/* Form */
+.contact-page .form .heading p,
+.contact-page .form .heading h2 {
+    text-align: left;
+}
+
+.contact-page .contact-wrapper .form{
+    flex: 1;
+    width: 100%;
+    gap: 10px;
+}
+
+.contact-page .contact-wrapper .form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-page .contact-wrapper .name-email{
+    display: flex;
+}
+
+.contact-page .contact-wrapper .name-email input{
+    flex: 1;
+}
+
+.contact-page .form input{
+    height: 50px;
+    padding: 0 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: .5px solid var(--white);
+    outline: none;
+}
+
+.contact-page .form input::placeholder{
+    color: var(--white);
+}
+
+.contact-page .form textarea{
+    width: 100%;
+    height: 235px;
+    padding: 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: .5px solid var(--white);
+    outline: none;
+    resize: none;
+}
+.contact-page .form textarea::placeholder{
+    color: var(--white);
+}
+
+.contact-page .form button{
+    height: 50px;
+    padding: 0 20px;
+    outline: none;
+    border: .5px solid var(--white);
+
+    color: var(--primary, #1F2B6C);
+    background-color: var(--accent);
+    text-align: center;
+    font-family: 'Work Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+/* Contact section */
+
+.contact-page .contact-wrapper .contact-section{
+    flex: 1;
+}
+
+.contact-page .contact-wrapper .contact-section .heading{
+    display: none;
+}
+
+.contact .container{
+    margin-top: 0;
+}
+
+
+/* News Section */
+.contact-page .sm-card{
+    margin-top: 64px;
+}
+
+
+
+@media screen and (max-width: 1250px) {
+    .contact-page .contact-wrapper{
+        flex-direction: column;
+    }
+
+    .contact-page .contact-wrapper .form{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+    
+}
+
+
+@media screen and (max-width: 450px) {
+    .contact-page .contact-wrapper .name-email{
+        flex-wrap: wrap;
+    }
+    
+}

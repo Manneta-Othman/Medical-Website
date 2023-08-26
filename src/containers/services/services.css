@@ -1,0 +1,112 @@
+.services-page{
+    width: 100%;
+    min-height: calc(100vh - 140px);
+}
+
+.services-page .services-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 60px 0;
+}
+
+.services-page .services-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 317px;
+    height: fit-content;
+
+    border-radius: 5px;
+    border: 1px solid #c1c8ed;
+}
+
+.services-page .services-card .image{
+    position: relative;
+    max-width: 317px;
+    max-height: 300px;
+}
+
+.services-page .services-card .image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.services-page .services-card .image .icon{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    bottom: -20px;
+    right: 10px;
+    padding: 10px;
+    color: var(--white);
+    background-color: var(--primary);
+    z-index: 10;
+}
+
+.services-page .services-card .image::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--primary);
+    opacity: .8;
+    border-radius: 5px 5px 0px 0px;
+    transition: .3s ease-in-out;
+}
+
+.services-page .services-card .image:hover::after{
+    height: 100%;
+}
+
+.services-page .services-card .image:hover .icon{
+    background: none;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    color: var(--accent);
+}
+
+.services-card .content{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px 20px 20px;
+}
+
+.services-card .content p {
+    padding: 8px 0;
+}
+
+.services-card .content .more {
+    padding: 8px 0;
+}
+
+
+
+@media screen and (max-width: 450px) {
+    .services-page .services-card .image .icon{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+    }
+
+    .services-card .content{
+        display: flex;
+        flex-direction: column;
+        padding: 30px 20px 10px 20px;
+    }
+    
+    .services-card .content p {
+        padding: 8px 0;
+    }
+    
+    .services-card .content .more {
+        padding: 0;
+    }
+}

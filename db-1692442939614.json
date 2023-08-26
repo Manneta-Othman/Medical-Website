@@ -1,0 +1,68 @@
+{
+  "news": [
+    {
+      "date": "Monday 05, September 2021 | By Author",
+      "title": "This Article’s Title goes Here, but not too long I.",
+      "img": "img/news1.jpeg",
+      "likes": 34,
+      "views": 44,
+      "id": 1
+    },
+    {
+      "date": "Monday 07, September 2021 | By Author",
+      "title": "This Article’s Title goes Here, but not too long II.",
+      "img": "img/news1.jpeg",
+      "likes": 45,
+      "views": 53,
+      "id": 2
+    },
+    {
+      "date": "Monday 09, September 2021 | By Author",
+      "title": "This Article’s Title goes Here, but not too long III.",
+      "img": "img/news1.jpeg",
+      "likes": 65,
+      "views": 73,
+      "id": 3
+    },
+    {
+      "date": "Monday 11, September 2021 | By Author",
+      "title": "This Article’s Title goes Here, but not too long IV.",
+      "img": "img/news1.jpeg",
+      "likes": 26,
+      "views": 46,
+      "id": 4
+    },
+    {
+      "date": "Monday 15, September 2021 | By Author",
+      "title": "This Article’s Title goes Here, but not too long V.",
+      "img": "img/news1.jpeg",
+      "likes": 36,
+      "views": 66,
+      "id": 5
+    },
+    {
+      "date": "Monday 16, September 2021 | By Author",
+      "title": "This Article’s Title goes Here, but not too long VI.",
+      "img": "img/news1.jpeg",
+      "likes": 42,
+      "views": 56,
+      "id": 6
+    },
+    {
+      "date": "Monday 17, September 2021 | By Author",
+      "title": "This Article’s Title goes Here, but not too long VII.",
+      "img": "img/news1.jpeg",
+      "likes": 52,
+      "views": 81,
+      "id": 7
+    },
+    {
+      "date": "Monday 018, September 2021 | By Author",
+      "title": "This Article’s Title goes Here, but not too long VIII.",
+      "img": "img/news1.jpeg",
+      "likes": 18,
+      "views": 30,
+      "id": 8
+    }
+  ]
+}
