@@ -66,8 +66,14 @@ NavBar Bottom
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     background-color: var(--primary);
     padding: 20px 9%;
+}
+
+.navbar-bottom.sticky{
+    position: sticky;
+    top: 0;
 }
 
 .navbar-bottom .logo{
@@ -120,6 +126,20 @@ NavBar Bottom
     line-height: 15px;
     color: var(--white);
     column-gap: 20px;
+    cursor: pointer;
+}
+
+.left-side .appointment a{
+    color: var(--primary);
+}
+
+.left-side .appointment:hover a{
+    color: var(--white);
+}
+
+.left-side .appointment:hover{
+    color: var(--white);
+    background-color: var(--secondary);
 }
 
 .left-side .toggle-menu{
@@ -171,7 +191,7 @@ Booking
     border-radius: 20px;
 }
 
-.booking .fields input, select{
+.booking .fields input, .booking .fields select{
     position: absolute;
     border: none;
     outline: none;
@@ -615,14 +635,16 @@ SubHeader
 }
 
 .sub-header .content{
+    width: 90%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 10%;
 }
 
-.sub-header .content p, h1{
+.sub-header .content p, .sub-header .content h1{
     color: var(--primary);
+    max-width: 90%;
 }
 
 .sub-header .line{
@@ -716,6 +738,41 @@ Services Details
     height: auto;
 }
 
+/**********
+NewsDetails Design 
+***********/
+
+.news-details{
+    width: 100%;
+    min-height: calc(100vh - 170px);
+}
+
+.news-details-container{
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 44px;
+}
+
+.news-details-container .content{
+    flex: 3;
+}
+
+.prev-next{
+    max-width: 658px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.news-page-container .content .prev-next button{
+    margin-top: 0;
+}
+
+
+
+
+
 
 
 
@@ -761,6 +818,13 @@ Services Details
         opacity: 0.5;
     }
 
+    /* btn more */
+    .btn-more{
+        padding: 11px 22px;
+        gap: 7px;
+        font-size: 15px;
+      }
+
 }
 
 @media screen and (max-width: 900px) {
@@ -788,12 +852,12 @@ Services Details
     .nav-links{
         position: absolute;
         left: 0;
-        top: -150%;
+        top: -100%;
         width: 100%;
         height: fit-content;
         background-color: var(--primary);
         padding: 20px;
-        z-index: 1;
+        z-index: -1;
         transition: .4s ease-in-out;
         opacity: 0;
 
@@ -869,7 +933,13 @@ Services Details
         height: 70px;
         padding: 14px;
     }
-}
+
+    /* btn more */
+    .btn-more{
+        padding: 9px 18px;
+        gap: 6px;
+        font-size: 14px;
+      }}
 
 
 @media screen and (max-width: 650px) {
@@ -957,4 +1027,22 @@ Services Details
     .sv-details .services-left .top .row{
         width: 120px;
     }
+
+    /* btn more */
+    .btn-more{
+        padding: 8px 16px;
+        gap: 5px;
+        font-size: 13px;
+      }
+}
+
+
+
+@media screen and (max-width: 450px) {
+    /* btn more */
+    .btn-more{
+        padding: 6px 12px;
+        gap: 4px;
+        font-size: 12px;
+        }
 }

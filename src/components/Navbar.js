@@ -8,12 +8,32 @@ import {FiSearch, FiMenu} from 'react-icons/fi'
 import {AiOutlineClose} from 'react-icons/ai'
 
 import { Link } from 'react-router-dom';
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 
 const Navebar = () => {
 
+
     const [showMenu, setShowMenu] = useState(false);
+
+    const menuRef = useRef()
+
+    useEffect(() => {
+
+        const handleShow = (e) => {
+
+            if(!menuRef.current.contains(e.target)) {
+                setShowMenu(false)
+            }
+        }
+
+        document.addEventListener('mouseup', handleShow)
+
+        console.log(menuRef.current.childNodes)
+
+    })
+
+
 
     return ( 
         <nav className="navbar">
@@ -60,7 +80,7 @@ const Navebar = () => {
                     Med<span>dical</span>
                 </div>
 
-                <ul className={showMenu ? 'nav-links active' : 'nav-links'}>
+                <ul className={showMenu ? 'nav-links active' : 'nav-links'} ref={menuRef} >
                     <li>
                         <Link className='link active' to="/">Home</Link>
                     </li>
@@ -83,16 +103,17 @@ const Navebar = () => {
 
 
                 <div className="left-side">
-                            <FiSearch className='search-icon' /> 
+                    <FiSearch className='search-icon' /> 
 
-                            <div className="toggle-menu">
-                                {
-                                    showMenu ? <AiOutlineClose onClick={() => setShowMenu(!showMenu)}/>
-                                             : <FiMenu onClick={() => setShowMenu(!showMenu)}/> 
-                                }
-                            </div>
-
-                    <div className="appointment btn">Appointment</div>
+                    <div className="toggle-menu">
+                        {
+                            showMenu ? <AiOutlineClose onClick={() => setShowMenu(!showMenu)}/>
+                                        : <FiMenu onClick={() => setShowMenu(!showMenu)}/> 
+                        }
+                    </div>
+                    <div className="appointment btn">
+                        <Link to='/appointment'>Appointment</Link> 
+                    </div>
                 </div>
 
             </div>

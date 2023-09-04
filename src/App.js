@@ -8,57 +8,39 @@ import Services from './containers/services/ServicesPage'
 import Doctors from './containers/doctors/DoctorsPage'
 import News from './containers/news/News'
 import Contact from './containers/contact/Contact'
+import Appointment from './containers/appointment/Appointment'
 import NotFound from './containers/notfound/NotFound';
 import Navebar from './components/Navbar';
 import SvDetails from './components/SvDetails';
 import { Footer } from './components/Footer';
-import { createContext } from 'react';
+import NewsDetails from './components/NewsDetails';
+
+import {ProvideDataContext} from './Context';
 
 
-export const DataContext = createContext();
 
 
 function App() {
-
-  const [services, setServices] = useState();
-
-  const [news, setNews] = useState();
-
-  const [serviceId, setServiceId] = useState(0);
-
-  const getData = () => {
-    fetch('data.json', {headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }}).then((res) => {
-      return res.json();
-    }).then((data) => {
-      setServices(data.services);
-      setNews(data.news);
-    })
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   return (
     <>
   <div className="App">
       <BrowserRouter>
         <Navebar />
-      <DataContext.Provider value={{services, setServices, serviceId, setServiceId, news, setNews}}>
+      <ProvideDataContext>
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/services' element={<Services />} />
-            <Route path='/services-details' element={<SvDetails />} />
+            <Route path='/services/:id' element={<SvDetails />} />
             <Route path='/doctors' element={<Doctors />} />
             <Route path='/news' element={<News />} />
+            <Route path='news/:id' element={<NewsDetails />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/appointment' element={<Appointment />} />
             <Route path="/*" element={<NotFound/>}/>
         </Routes>
-      </DataContext.Provider>
+      </ProvideDataContext>
         <Footer />
       </BrowserRouter>
 

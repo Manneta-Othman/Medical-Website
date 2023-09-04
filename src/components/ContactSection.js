@@ -10,7 +10,6 @@ import {HiOutlineMapPin} from 'react-icons/hi2'
 
 export function ContactSection() {
 
-
   return(
   
   <section className="contact">

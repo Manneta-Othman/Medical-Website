@@ -10,6 +10,7 @@ import SmCard from '../../components/SmCard';
 export default function DoctorsPage() {
 
   return (
+    <>
     <div className='doctors-page'>
       <SubHeader img={aboutHeader} subTitle='Home / Doctors' title='Our Doctors' />
 
@@ -22,5 +23,6 @@ export default function DoctorsPage() {
           <ContactSection />
       </div>
     </div>
+    </>
   )
 }

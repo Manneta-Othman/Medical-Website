@@ -6,13 +6,9 @@ import { Link } from "react-router-dom";
 
 import './components.css';import './components.css'
 
-import { DataContext } from "../App";
 
 
 export function SvCard({img, title, text, id}) {
-
-const {setServiceId} = useContext(DataContext);
-
 
   return <div className="services-card">
               <div className="image">
@@ -22,8 +18,8 @@ const {setServiceId} = useContext(DataContext);
               <div className="content">
                 <h3 className="title">{title}</h3>
                 <p className="body2">{text.slice(0, 90) + '...'}</p>
-                <div className="more" onClick={() => setServiceId(id)} >
-                  <Link to='/services-details'><p className="body2">Learn More</p></Link> 
+                <div className="more">
+                  <Link to={`/services/${id}`} ><p className="body2">Learn More</p></Link> 
                   <AiOutlineArrowRight />
                 </div>
               </div>

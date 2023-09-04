@@ -67,9 +67,9 @@ export function Doctors() {
                 <p className="body1">{card.name}</p>
                 <h3 className="caption">{card.specialty}</h3>
                 <div className="icons">
-                  <BsFacebook class='icon' />
-                  <FaInstagramSquare class='icon' />
-                  <AiFillTwitterCircle class='icon' />
+                  <BsFacebook className='icon' />
+                  <FaInstagramSquare className='icon' />
+                  <AiFillTwitterCircle className='icon' />
                 </div>
                 <button className='body2'>View More</button>
               </div>
