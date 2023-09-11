@@ -7,7 +7,7 @@ import SubHeader from '../../components/SubHeader'
 import contactHeader from '../../assets/contact-header.png'
 import Heading from '../../components/Heading'
 import { ContactSection } from '../../components/ContactSection'
-import SmCard from '../../components/SmCard'
+import NewsSection from '../../components/NewsSection'
 
 
 export default function Contact() {
@@ -36,7 +36,7 @@ export default function Contact() {
             <ContactSection />
           </div>
         </div>
-          <SmCard />
+          <NewsSection />
       </div>
       
       

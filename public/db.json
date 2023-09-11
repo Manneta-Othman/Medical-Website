@@ -1,36 +1,36 @@
     [
         {
-            "img": "img/doctor1.png",
+            "img": "/img/doctor1.png",
             "name": "Doctor's Name",
             "specialty": "Nuerology",
             "id": 1
         },
         {
-            "img": "img/doctor2.png",
+            "img": "/img/doctor2.png",
             "name": "Doctor's Name",
             "specialty": "Oncology",
             "id": 2
         },
         {
-            "img": "img/doctor3.png",
+            "img": "/img/doctor3.png",
             "name": "Doctor's Name",
             "specialty": "Otorhinolaryngology",
             "id": 3
         },
         {
-            "img": "img/doctor1.png",
+            "img": "/img/doctor1.png",
             "name": "Doctor's Name",
             "specialty": "Ophthalmology",
             "id": 4
         },
         {
-            "img": "img/doctor2.png",
+            "img": "/img/doctor2.png",
             "name": "Doctor's Name",
             "specialty": "Cardiovascular",
             "id": 5
         },
         {
-            "img": "img/doctor3.png",
+            "img": "/img/doctor3.png",
             "name": "Doctor's Name",
             "specialty": "Urology",
             "id": 6

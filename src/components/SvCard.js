@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { PiBandaidsLight } from 'react-icons/pi'

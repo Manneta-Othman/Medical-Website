@@ -11,32 +11,25 @@ import {GiMedicalPackAlt} from 'react-icons/gi';
 
 import services1 from '../assets/services1.jpeg';
 
-
 import { Doctors } from './Doctors';
 import { ContactSection } from './ContactSection';
+import { services } from '../data'
 
 export default function SvDetails() {
 
-  const [services, setServices] = useState([]);
   
   const params = useParams().id
   
-  const [sv, setSv] = useState({});
+  const [sv, setSv] = useState(services[params]);
   
-
   useEffect(() => {
-    const getData = async () => {
+    let art = services.find(n => n.id === parseInt(params))
 
-      const servicesRresult = await fetch(`http://localhost:4000/services`)
-      const services = await servicesRresult.json()
-
-      const svResult = await fetch(`http://localhost:4000/news/${params}`)
-      const data = await svResult.json()
-
-      setServices(services)
-      setSv(data)
+    if(art) {
+      setSv(art)
     }
-    getData();
+
+    window.scrollTo(0, 0)
   }, [params]);
 
   return (

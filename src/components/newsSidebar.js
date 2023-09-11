@@ -1,8 +1,7 @@
-import React, {useContext} from "react";
 
 import {AiOutlineSearch} from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
-import { useDataContext } from '../Context'
 
 
 export function NewsSidebar({news}) {
@@ -21,10 +20,10 @@ export function NewsSidebar({news}) {
                   <div className="image">
                     <img src={blog.img} alt="blog" />
                   </div>
-                  <div className="recent-content">
-                    <p className="date">{blog.date}</p>
-                    <p className="title">{blog.title}</p>
-                  </div>
+                  <Link to={`/news/${blog.id}`} > <div className="recent-content">
+                      <p className="date">{blog.date}</p>
+                      <p className="title">{blog.title}</p>
+                    </div> </Link>
                 </div>)}
           </div>
 

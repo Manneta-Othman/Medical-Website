@@ -22,7 +22,7 @@ export function Doctors() {
     const [cards, setCards] = useState([]);
 
     const getData = () => {
-      fetch('db.json', { headers: {
+      fetch('/db.json', { headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
     }}).then((res) => {

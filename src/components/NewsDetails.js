@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
-
-import { UseDataContext } from '../Context'
+import React, { useState, useEffect } from 'react'
 
 import SubHeader from './SubHeader'
 import newsHeader from '../assets/newsDetails.jpeg'
@@ -8,30 +6,23 @@ import {AiOutlineArrowRight, AiOutlineArrowLeft} from 'react-icons/ai'
 import { NewsSidebar } from './newsSidebar';
 import { useParams, Link } from 'react-router-dom';
 
+import { news } from '../data'
+
 
 export default function NewsDetails() {
   
-  const [news, setNews] = useState([]);
-  
   const params = useParams().id
   
-  const [article, setArticle] = useState({});
+  const [article, setArticle] = useState(news[params]);
   
-
-
   useEffect(() => {
-    const getData = async () => {
+    let art = news.find(n => n.id === parseInt(params))
 
-      const newsRresult = await fetch(`http://localhost:4000/news`)
-      const news = await newsRresult.json()
-
-      const ArticleResult = await fetch(`http://localhost:4000/news/${params}`)
-      const data = await ArticleResult.json()
-
-      setNews(news)
-      setArticle(data)
+    if(art) {
+      setArticle(art)
     }
-    getData();
+
+    window.scrollTo(0, 200)
   }, [params]);
 
 

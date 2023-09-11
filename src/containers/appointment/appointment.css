@@ -84,7 +84,7 @@
     border-radius: 5px;
 }
 
-.select-box:hover .options{
+.select-box.show .options{
     display: block;
 }
 
@@ -110,12 +110,12 @@
 .select-box .options p:hover{
     color: var(--accent);
     background-color: var(--secondary);
+    filter: brightness(90%);
 }
 
-.select-box .options p.active{
+.select-box .options p.selected{
     color: var(--accent);
     background-color: var(--secondary);
-    filter: brightness(90%);
 }
 
 ::placeholder{

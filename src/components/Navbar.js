@@ -7,7 +7,7 @@ import phone from '../assets/phone.svg'
 import {FiSearch, FiMenu} from 'react-icons/fi'
 import {AiOutlineClose} from 'react-icons/ai'
 
-import { Link } from 'react-router-dom';
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react'
 
 
@@ -25,15 +25,31 @@ const Navebar = () => {
             if(!menuRef.current.contains(e.target)) {
                 setShowMenu(false)
             }
+
         }
 
         document.addEventListener('mouseup', handleShow)
 
-        console.log(menuRef.current.childNodes)
+        const links = menuRef.current.childNodes;
+
+        links.forEach(item => {
+            item.addEventListener('click', () => {
+                setShowMenu(false)
+            })
+        })
 
     })
 
+    function CustomLink ({children, ...props}) {
 
+        const path = useResolvedPath(props.to).pathname
+
+        const isActive = useMatch({ path, end: true })
+
+        return(
+                <Link className={isActive ? 'link active' : 'link'} to={props.to} > {children} </Link>
+        ) 
+    }
 
     return ( 
         <nav className="navbar">
@@ -82,22 +98,22 @@ const Navebar = () => {
 
                 <ul className={showMenu ? 'nav-links active' : 'nav-links'} ref={menuRef} >
                     <li>
-                        <Link className='link active' to="/">Home</Link>
+                        <CustomLink className='link' to="/">Home</CustomLink>
                     </li>
                     <li>
-                        <Link className='link' to="/about">about us</Link>
+                        <CustomLink className='link' to="/about">about us</CustomLink>
                     </li>
                     <li>
-                        <Link className='link' to="/services">services</Link>
+                        <CustomLink className='link' to="/services">services</CustomLink>
                     </li>
                     <li>
-                        <Link className='link' to="/doctors">Doctors</Link>
+                        <CustomLink className='link' to="/doctors">Doctors</CustomLink>
                     </li>
                     <li>
-                        <Link className='link' to="/news">News</Link>
+                        <CustomLink className='link' to="/news">News</CustomLink>
                     </li>
                     <li>
-                        <Link className='link' to="/contact">contact</Link>
+                        <CustomLink className='link' to="/contact">contact</CustomLink>
                     </li>
                 </ul>
 
@@ -119,6 +135,9 @@ const Navebar = () => {
             </div>
         </nav>
      );
+
 }
+
+
  
 export default Navebar;

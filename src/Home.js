@@ -10,7 +10,7 @@ import React from 'react'
 import Heading from './components/Heading';
 import SpecialtiesContainer from './components/SpecialtiesContainer';
 
-import SmCard from './components/SmCard';
+import NewsSection from './components/NewsSection';
 
 
 export default function Home() {
@@ -47,13 +47,7 @@ export default function Home() {
 
     {/******** News Section ********/}
 
-      <section className="news">
-        <Heading title='News' subHeading='Better information, Better health' />
-        
-        <div className="small-news">
-          <SmCard />
-        </div>
-      </section>
+    <NewsSection     />
 
     {/******** Contact Section ********/}
       <ContactSection />

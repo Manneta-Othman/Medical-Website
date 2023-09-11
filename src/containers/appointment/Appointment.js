@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import SubHeader from '../../components/SubHeader'
 import './appointment.css'
 
@@ -10,33 +10,38 @@ import { IoIosArrowDown } from 'react-icons/io'
 
 export default function Appointment() {
 
+  const [isOpen, setIsOpen] = useState(false)
+
   const [selected, setSelected] = useState(false)
 
-  const handleSelect = (id) => {
+  const handleShow = (item) => {
+    item.target.classList.toggle('show')
+  }
 
-    doctors[id-1].isSelected = true;
-
-  console.log(doctors)
-}
-
-  const gender = [
+  const [gender, setGender] = useState([
     {name: 'Male', id: 1, isSelected: false},
     {name: 'Female', id: 2, isSelected: false}
-  ]
+  ])
 
-  const doctors = [
+  const [doctors, setDoctors] = useState([
     {name: 'Doctor 1', id: 1, isSelected: false},
     {name: 'Doctor 2', id: 2, isSelected: false},
     {name: 'Doctor 3', id: 3, isSelected: false}
-  ]
+  ])
 
-  const departments = [
+  const [departments, setDepartments] = useState([
     {name: 'Department 1', id: 1, isSelected: false},
     {name: 'Department 2', id: 2, isSelected: false},
     {name: 'Department 3', id: 3, isSelected: false}
-  ]
+  ])
 
-
+  const handleSelectGender = (id) => {
+    
+  }
+  
+  const handleSelect = (id) => {
+    console.log(id)
+  }
 
   return (
 
@@ -51,11 +56,14 @@ export default function Appointment() {
                 <div className="fields">
                   <input type="text" placeholder='Name' />
 
-                  <div className="select-box">
+                  <div className='select-box' onClick={(item) => handleShow(item)}>
                     <p className="body2">Gender</p>
                       <div className='options'>
                       {gender.map((g, index) => (
-                          <p className="body2"  onClick={(id) => handleSelect(id)} key={index} >{g.name}</p>
+                          <p className={ g.isSelected ? "body2 selected" : "body2"}
+                            onClick={() => handleSelectGender(g.id -1)} 
+                            key={index} 
+                          >{g.name}</p>
                         ))}
                       </div>
                   </div>
@@ -78,16 +86,16 @@ export default function Appointment() {
                     <input type="time" />
                   </div>
 
-                  <div className="select-box">
+                  <div className='select-box' onClick={(item) => handleShow(item)} >
                     <p className="body2">Dorctors</p>
                       <div className='options'>
                         {doctors.map((doctor) => (
-                          <p className={doctor.isSelected ? "body2 active" : "body2"} onClick={() => handleSelect(doctor.id)} key={doctor.id} >{doctor.name}</p>
+                          <p className="body2" onClick={() => handleSelect(doctor.id)} key={doctor.id} >{doctor.name}</p>
                         ))}
                       </div>
                   </div>
 
-                  <div className="select-box">
+                  <div className='select-box' onClick={(item) => handleShow(item)} >
                     <p className="body2">Departments</p>
                       <div className='options'>
                       {departments.map((dep, index) => (

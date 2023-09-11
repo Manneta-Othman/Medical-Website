@@ -25,7 +25,7 @@ import {BsHeartPulse} from 'react-icons/bs';
         {
           specialties.map((specialty) => (
 
-            <div className="specialty" key={specialties.id}>
+            <div className="specialty" key={specialty.id}>
               <BsHeartPulse className='icon' />
               <p className="body2">{specialty.title}</p>
           </div>

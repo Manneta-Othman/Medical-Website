@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { useState, useEffect } from 'react';
 
 import Home from './Home'
 import About from './containers/about/AboutPage'
