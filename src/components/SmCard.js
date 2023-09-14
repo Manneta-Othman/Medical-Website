@@ -1,5 +1,6 @@
 import './components.css'
 
+import {Link} from 'react-router-dom'
 
 import {AiOutlineEye, AiOutlineHeart} from 'react-icons/ai'
 
@@ -13,27 +14,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import required modules
 import { Grid, Pagination } from 'swiper/modules';
-import { useEffect, useState } from 'react';
 
-const SmCard = () => {
-
-    const [newsData, setNewsData] = useState([])
-
-    const getData = () => {
-        fetch('data.json', { headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }}).then((res) => {
-            return res.json();
-        }).then((data) => {
-            setNewsData(data.news);
-        })
-    }
-
-    useEffect(() => {
-        getData();
-    },[]);
-
+const SmCard = ({newsData}) => {
     
     return ( 
         <div className="sm-card">
@@ -56,8 +38,8 @@ const SmCard = () => {
                             <img src={news.img} alt="news" />
                         </div>
                         <div className="content">
-                            <h3 className="small">{news.date}</h3>
-                            <p className="body1">{news.title}</p>
+                            <h3 className="small"><Link to={`/news/${news.id}`}>{news.date}</Link></h3>
+                            <p className="body1"><Link to={`/news/${news.id}`}>{news.title}</Link></p>
                             <div className="icons">
                                 <div className="views">
                                     <AiOutlineEye style={{color: 'rgba(82, 106, 233, 1)'}} />

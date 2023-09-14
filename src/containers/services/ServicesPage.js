@@ -29,6 +29,7 @@ export default function ServicesPage() {
 
   useEffect(() => {
     getData();
+    window.scrollTo(0,0)
   }, []);
 
 

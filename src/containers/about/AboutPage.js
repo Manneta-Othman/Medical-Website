@@ -9,8 +9,8 @@ import Heading from '../../components/Heading'
 import aboutWelcomeImg from '../../assets/about-welcome.png'
 
 import {Doctors} from '../../components/Doctors'
-import SmCard from '../../components/SmCard'
 import {ContactSection} from '../../components/ContactSection'
+import NewsSection from '../../components/NewsSection';
 
 
 
@@ -49,9 +49,7 @@ export default function AboutPage() {
       <Doctors />
 
       {/* News */}
-      <section className="news">
-        <SmCard />
-      </section>
+      <NewsSection />
 
       {/* Contact */}
 

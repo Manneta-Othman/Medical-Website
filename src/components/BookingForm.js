@@ -6,7 +6,9 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 const BookingForm = () => {
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+      e.preventDefault()
+      
+
     }
 
     return ( 

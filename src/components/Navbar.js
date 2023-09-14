@@ -13,8 +13,11 @@ import { useEffect, useRef, useState } from 'react'
 
 const Navebar = () => {
 
+    const [showSearch, setShowSearch] = useState(false)
 
     const [showMenu, setShowMenu] = useState(false);
+
+    const [searchValue, setSearchValue] = useState('')
 
     const menuRef = useRef()
 
@@ -49,6 +52,11 @@ const Navebar = () => {
         return(
                 <Link className={isActive ? 'link active' : 'link'} to={props.to} > {children} </Link>
         ) 
+    }
+
+    function handleSearch () {
+        setShowSearch(prev => !prev)
+        setSearchValue('')
     }
 
     return ( 
@@ -119,7 +127,14 @@ const Navebar = () => {
 
 
                 <div className="left-side">
-                    <FiSearch className='search-icon' /> 
+                    {
+                        showSearch ? <AiOutlineClose className='search-icon' onClick={() => handleSearch()} /> :
+                         <FiSearch className='search-icon' onClick={() => handleSearch()} />
+                     }
+                    <div className={showSearch ? "search show" : "search"}>
+                        <input className='body2' type="search" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
+                        <FiSearch className='search-icon show' onClick={() => handleSearch()}/> 
+                    </div>
 
                     <div className="toggle-menu">
                         {

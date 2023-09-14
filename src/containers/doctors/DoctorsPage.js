@@ -5,7 +5,7 @@ import aboutHeader from '../../assets/welcome.png'
 import { Doctors } from '../../components/Doctors';
 import { Testimonials } from '../../components/Testimonials';
 import { ContactSection } from '../../components/ContactSection';
-import SmCard from '../../components/SmCard';
+import NewsSection from '../../components/NewsSection';
 
 export default function DoctorsPage() {
 
@@ -17,9 +17,7 @@ export default function DoctorsPage() {
       <div className="container">
           <Doctors />
           <Testimonials />
-          <div className='padding'>
-            <SmCard />
-          </div>
+          <NewsSection />
           <ContactSection />
       </div>
     </div>

@@ -10,13 +10,6 @@ import { IoIosArrowDown } from 'react-icons/io'
 
 export default function Appointment() {
 
-  const [isOpen, setIsOpen] = useState(false)
-
-  const [selected, setSelected] = useState(false)
-
-  const handleShow = (item) => {
-    item.target.classList.toggle('show')
-  }
 
   const [gender, setGender] = useState([
     {name: 'Male', id: 1, isSelected: false},
@@ -35,13 +28,53 @@ export default function Appointment() {
     {name: 'Department 3', id: 3, isSelected: false}
   ])
 
-  const handleSelectGender = (id) => {
-    
+  const [isGenderOpen, setIsGenderOpen] = useState(false)
+  const [isDoctorsOpen, setIsDoctorsOpen] = useState(false)
+  const [isDepartmentOpen, setIsDepartmentOpen] = useState(false)
+
+  const [date, setDate] = useState('data')
+  const [time, setTime] = useState('Time')
+
+  function handleSelectGender(id) {
+    setGender(prevGender => {
+      return prevGender.map(prevG => {
+        if(prevG.id === id){
+          return {...prevG, isSelected: !prevG.isSelected}
+        }else{
+          return prevG
+        }
+      })
+    })
+    setIsGenderOpen(false)
   }
-  
-  const handleSelect = (id) => {
-    console.log(id)
+
+  function handleSelectDoctors(id) {
+    setDoctors(prevDoctors => {
+      return prevDoctors.map(prevD => {
+        if(prevD.id === id){
+          return {...prevD, isSelected: !prevD.isSelected}
+        }else{
+          return prevD
+        }
+      })
+    })
+    setIsDoctorsOpen(false)
   }
+
+  function handleSelectDepartment(id) {
+    setDepartments(prevDepartment => {
+      return prevDepartment.map(prevDep => {
+        if(prevDep.id === id){
+          return {...prevDep, isSelected: !prevDep.isSelected}
+        }else{
+          return prevDep
+        }
+      })
+    })
+    setIsDepartmentOpen(false)
+  }
+
+
 
   return (
 
@@ -56,12 +89,20 @@ export default function Appointment() {
                 <div className="fields">
                   <input type="text" placeholder='Name' />
 
-                  <div className='select-box' onClick={(item) => handleShow(item)}>
+                  <div className={ isGenderOpen ? 'select-box show' : 'select-box'} 
+                    onClick={() => {
+                      setIsGenderOpen( prev => !prev)
+                        setIsDoctorsOpen(false)
+                        setIsDepartmentOpen(false)
+                      }}>
                     <p className="body2">Gender</p>
                       <div className='options'>
                       {gender.map((g, index) => (
                           <p className={ g.isSelected ? "body2 selected" : "body2"}
-                            onClick={() => handleSelectGender(g.id -1)} 
+                            onClick={() => {
+                              handleSelectGender(g.id)
+                              setIsGenderOpen( prev => !prev)
+                            }} 
                             key={index} 
                           >{g.name}</p>
                         ))}
@@ -73,33 +114,64 @@ export default function Appointment() {
 
                   <div className="date">
                     <div className="setdate">
-                      <p className="body2">Date</p>
+                      <p className="body2" >{date}</p>
                       <IoIosArrowDown />
                     </div>
-                    <input type="date" />
-                  </div>
-                  <div className="time">
-                    <div className="setdate">
-                      <p className="body2">Time</p>
-                      <IoIosArrowDown />
-                    </div>
-                    <input type="time" />
+                    <input 
+                      onClick={e => e.target.showPicker()} 
+                      type='date' value={date} 
+                      onChange={e => setDate(e.target.value)}
+                      />
                   </div>
 
-                  <div className='select-box' onClick={(item) => handleShow(item)} >
+                  <div className="time">
+                    <div className="setdate">
+                      <p className="body2">{time}</p>
+                      <IoIosArrowDown />
+                    </div>
+                    <input 
+                      onClick={e => e.target.showPicker()} 
+                      type='time' value={date} 
+                      onChange={e => setTime(e.target.value)}
+                      />                  
+                  </div>
+
+                  <div className={ isDoctorsOpen ? 'select-box show' : 'select-box'}
+                     onClick={() => {
+                        setIsDoctorsOpen( prev => !prev)
+                        setIsGenderOpen(false)
+                        setIsDepartmentOpen(false)
+                      }}>
                     <p className="body2">Dorctors</p>
                       <div className='options'>
-                        {doctors.map((doctor) => (
-                          <p className="body2" onClick={() => handleSelect(doctor.id)} key={doctor.id} >{doctor.name}</p>
+                        {doctors.map((doctor, index) => (
+                          <p className={ doctor.isSelected ? "body2 selected" : "body2"}
+                            onClick={() => {
+                              handleSelectDoctors(doctor.id)
+                              setIsDoctorsOpen( prev => !prev)
+                              }}
+                              key={index}
+                           >{doctor.name}</p>
                         ))}
                       </div>
                   </div>
 
-                  <div className='select-box' onClick={(item) => handleShow(item)} >
+                  <div className={ isDepartmentOpen ? 'select-box show' : 'select-box'} 
+                    onClick={() => {
+                      setIsDepartmentOpen( prev => !prev)
+                      setIsGenderOpen(false)
+                      setIsDoctorsOpen(false)
+                    }}>
                     <p className="body2">Departments</p>
                       <div className='options'>
                       {departments.map((dep, index) => (
-                          <p className="body2" onClick={(id) => handleSelect(id)} key={index} >{dep.name}</p>
+                          <p className={ dep.isSelected ? "body2 selected" : "body2"}
+                          onClick={() => {
+                            handleSelectDepartment(dep.id)
+                            setIsDepartmentOpen( prev => !prev)
+                            }}
+                            key={index}  
+                          >{dep.name}</p>
                         ))}
                       </div>
                   </div>

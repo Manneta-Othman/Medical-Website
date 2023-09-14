@@ -1,5 +1,7 @@
 import React from "react";
 
+import {Link} from 'react-router-dom'
+
 import Heading from "./Heading";
 import {IoBandageOutline} from 'react-icons/io5';
 import {TbHeartPlus} from 'react-icons/tb';
@@ -11,6 +13,7 @@ import services2 from '../assets/services2.png';
 
 export function Services() {
   return <section className="services">
+
         <Heading title='Our Services' subHeading='Care you can believe in' />
 
         <div className="services-row">
@@ -33,7 +36,7 @@ export function Services() {
                 <p className="body2">blood bank</p>
               </div>
             </div>
-            <p className="view-all small">View</p>
+            <Link to='/services'><p className="view-all small">View</p></Link>
           </div>
 
           <div className="services-center">

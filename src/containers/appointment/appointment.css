@@ -85,16 +85,21 @@
 }
 
 .select-box.show .options{
-    display: block;
+    top: 50px;
+    left: 20px;
+    z-index: 10;   
+    opacity: 1; 
 }
 
 .select-box .options{
     position: absolute;
-    display: none;
-    top: 50px;
+    display: block;
+    top: 20px;
+    left: 0;
     width: 100%;
-    transition: .3s ease;
-    z-index: 10;
+    opacity: 0;
+    z-index: -1;
+    transition: .5s ease;
 }
 
 .select-box .options p{
@@ -107,15 +112,14 @@
     user-select: none;
 }
 
-.select-box .options p:hover{
-    color: var(--accent);
-    background-color: var(--secondary);
-    filter: brightness(90%);
+.select-box .options p:hover,
+.select-box .options p.selected:hover{
+    background-color: #41b9ff;
 }
 
 .select-box .options p.selected{
-    color: var(--accent);
-    background-color: var(--secondary);
+    color: #f1f1f1;
+    background-color: #2ca4e9;
 }
 
 ::placeholder{

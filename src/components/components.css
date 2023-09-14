@@ -63,6 +63,7 @@ NavBar Bottom
 **********/
 
 .navbar-bottom{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,6 +121,35 @@ NavBar Bottom
     z-index: 10;
 }
 
+.left-side .search{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.left-side .search.show{
+    display: flex;
+}
+
+.left-side .search input{
+    min-width: 280px;
+    width: 400px;
+    height: 50px;
+    outline: none;
+    border: none;
+    padding: 0 25px;
+    margin: 0 20px;
+    background-color: #f1f1f1;
+    color: var(--primary);
+}
+
 .left-side .search-icon{
     display: inline-flex;
     font-size: 30px;
@@ -128,6 +158,11 @@ NavBar Bottom
     column-gap: 20px;
     cursor: pointer;
 }
+
+.left-side .search-icon.show{
+    color: var(--white);
+}
+
 
 .left-side .appointment a{
     color: var(--primary);
@@ -407,8 +442,17 @@ News Section
     padding: 15px;
 }
 
-.sm-card .news-card .content h3{
+.sm-card .news-card .content h3 a{
     color: var(--secondary);
+    cursor: pointer;
+}
+.sm-card .news-card .content h3 a:hover,
+.sm-card .news-card .content a:hover{
+    font-weight: 500;
+}
+
+.sm-card .news-card .content a{
+    color: var(--black);
     cursor: pointer;
 }
 
@@ -424,6 +468,11 @@ News Section
     display: flex;
     gap: 5px;
     cursor: pointer;
+}
+
+.sm-card .news-card .content .views:hover,
+ .sm-card .news-card .content .likes:hover{
+    transform: scale(1.1);
 }
 
 
@@ -842,6 +891,13 @@ NewsDetails Design
 
     .navbar-bottom .logo{
         font-size: 32px;
+    }
+
+    .left-side .search.show{
+        top: 74px;
+        height: 120px;
+        opacity: 1;
+        z-index: 10;
     }
 
     .top-left .item .content p,

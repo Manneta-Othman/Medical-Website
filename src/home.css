@@ -98,9 +98,15 @@
     height: 50px;
 }
 
-.header .header-boxes .col p{
+.header .header-boxes .col a{
     cursor: pointer;
+    color: var(--white);
 }
+
+.header .header-boxes .col:nth-child(2) a{
+    color: var(--primary);
+}
+
 
 
 /*********
@@ -125,6 +131,10 @@
     max-width: 658px;
     text-align: center;
     gap: 15px;
+}
+
+.welcome .content .more a{
+    color: var(--secondary);
 }
 
 .welcome .image{
@@ -176,6 +186,7 @@
     min-width: 157px;
     min-height: 106px;
     padding: 24px;
+    cursor: pointer;
 }
 .services-left .row p{
     text-transform: capitalize;
@@ -199,6 +210,14 @@
     background-color: var(--primary);
     color: var(--accent);
     padding: 12px 0;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+
+.view-all:hover, .view-all a:hover{
+    background-color: var(--secondary);
+    color: var(--white);
 }
 
 /* ********** */
