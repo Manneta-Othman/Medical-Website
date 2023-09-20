@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import SubHeader from '../../components/SubHeader'
 import './appointment.css'
 
@@ -9,6 +9,22 @@ import { ContactSection } from '../../components/ContactSection'
 import { IoIosArrowDown } from 'react-icons/io'
 
 export default function Appointment() {
+
+  const genderRef = useRef()
+  const doctorRef = useRef()
+  const departmentRef = useRef()
+
+  window.addEventListener('click', (e) => {
+    if(genderRef.current !== e.target){
+      setIsGenderOpen(false)
+    }
+    if(doctorRef.current !== e.target){
+      setIsDoctorsOpen(false)
+    }
+    if(departmentRef.current !== e.target){
+      setIsDepartmentOpen(false)
+    }
+  })
 
 
   const [gender, setGender] = useState([
@@ -46,6 +62,7 @@ export default function Appointment() {
       })
     })
     setIsGenderOpen(false)
+
   }
 
   function handleSelectDoctors(id) {
@@ -74,6 +91,11 @@ export default function Appointment() {
     setIsDepartmentOpen(false)
   }
 
+  function handleSubmit(e) {
+    e.preventDefault()
+    alert(`your appointment has been booked properly on  ${date} at  ${time}`)
+    window.location.reload()
+  }
 
 
   return (
@@ -85,16 +107,19 @@ export default function Appointment() {
           <div className="booking-left">
               <h2>Book an Appointment</h2>
               <p className='text body2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et.</p>
+              
               <form action="submit">
                 <div className="fields">
-                  <input type="text" placeholder='Name' />
+                  <input required type="text" placeholder='Name' />
 
                   <div className={ isGenderOpen ? 'select-box show' : 'select-box'} 
                     onClick={() => {
                       setIsGenderOpen( prev => !prev)
                         setIsDoctorsOpen(false)
                         setIsDepartmentOpen(false)
-                      }}>
+                      }}
+                      ref={genderRef}
+                      >
                     <p className="body2">Gender</p>
                       <div className='options'>
                       {gender.map((g, index) => (
@@ -109,8 +134,8 @@ export default function Appointment() {
                       </div>
                   </div>
 
-                  <input type="email" placeholder='Email' />
-                  <input type="phone" placeholder='Phone' />
+                  <input required type="email" placeholder='Email' />
+                  <input required type="phone" placeholder='Phone' />
 
                   <div className="date">
                     <div className="setdate">
@@ -118,6 +143,7 @@ export default function Appointment() {
                       <IoIosArrowDown />
                     </div>
                     <input 
+                      required
                       onClick={e => e.target.showPicker()} 
                       type='date' value={date} 
                       onChange={e => setDate(e.target.value)}
@@ -130,8 +156,9 @@ export default function Appointment() {
                       <IoIosArrowDown />
                     </div>
                     <input 
+                      required
                       onClick={e => e.target.showPicker()} 
-                      type='time' value={date} 
+                      type='time' value={time} 
                       onChange={e => setTime(e.target.value)}
                       />                  
                   </div>
@@ -141,7 +168,9 @@ export default function Appointment() {
                         setIsDoctorsOpen( prev => !prev)
                         setIsGenderOpen(false)
                         setIsDepartmentOpen(false)
-                      }}>
+                      }}
+                      ref={doctorRef}
+                      >
                     <p className="body2">Dorctors</p>
                       <div className='options'>
                         {doctors.map((doctor, index) => (
@@ -161,7 +190,9 @@ export default function Appointment() {
                       setIsDepartmentOpen( prev => !prev)
                       setIsGenderOpen(false)
                       setIsDoctorsOpen(false)
-                    }}>
+                    }}
+                    ref={departmentRef}
+                    >
                     <p className="body2">Departments</p>
                       <div className='options'>
                       {departments.map((dep, index) => (
@@ -170,15 +201,16 @@ export default function Appointment() {
                             handleSelectDepartment(dep.id)
                             setIsDepartmentOpen( prev => !prev)
                             }}
-                            key={index}  
+                            key={index}
                           >{dep.name}</p>
                         ))}
                       </div>
                   </div>
                 </div>
                 <textarea className='body2' placeholder='Message'></textarea>
-                <button className='body2' type="submit">Submit</button>
+                <button className='body2' type="submit" onClick={handleSubmit}>Submit</button>
               </form>
+
           </div>
           <div className="booking-right">
             <div className="work-time">

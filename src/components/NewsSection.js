@@ -5,7 +5,7 @@ import Heading from "./Heading";
 import { useEffect, useState } from 'react';
 
 
-   export default function NewsSection({}) {
+   export default function NewsSection() {
     const [newsData, setNewsData] = useState([])
 
     const getData = () => {

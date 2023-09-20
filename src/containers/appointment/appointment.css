@@ -9,7 +9,7 @@
     gap: 64px;
 }
 
-.booking-container{
+.appointment-page .booking-container{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@
     margin-top: 64px;
 }
 
-.booking-left{
+.appointment-page .booking-left{
     flex: 1;
 }
 
@@ -27,12 +27,12 @@
     margin-bottom: 10px;
 }
 
-.booking-left form{
+.appointment-page .booking-left form{
     margin-top: 64px;
 }
 
 
-.booking-left .fields{
+.appointment-page .booking-left .fields{
     position: relative;
     width: 100%;
     display: grid;
@@ -40,7 +40,7 @@
     grid-template-columns: repeat(2, 50%);
 }
 
-.booking-left input, .booking-left .select-box{
+.appointment-page .booking-left input, .booking-left .select-box{
     width: 100%;
     height: 50px;
     padding: 5px 10px;
@@ -51,15 +51,15 @@
     border-radius: 5px;
 }
 
-.booking-left .date, .booking-left .time{
+.appointment-page .booking-left .date, .booking-left .time{
     position: relative;
 }
-.booking-left .date input, .time input{
+.appointment-page .booking-left .date input, .time input{
     opacity: 0;
     cursor: pointer;
 }
 
-.booking-left .setdate{
+.appointment-page .booking-left .setdate{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -75,7 +75,7 @@
 }
 
 
-.select-box{
+.appointment-page .select-box{
     position: relative;
     display: flex;
     align-items: center;
@@ -84,14 +84,14 @@
     border-radius: 5px;
 }
 
-.select-box.show .options{
+.appointment-page .select-box.show .options{
     top: 50px;
     left: 20px;
     z-index: 10;   
     opacity: 1; 
 }
 
-.select-box .options{
+.appointment-page .select-box .options{
     position: absolute;
     display: block;
     top: 20px;
@@ -102,7 +102,7 @@
     transition: .5s ease;
 }
 
-.select-box .options p{
+.appointment-page .select-box .options p{
     line-height: 40px;
     color: var(--primary);
     border: .1px solid var(--primary);
@@ -112,12 +112,12 @@
     user-select: none;
 }
 
-.select-box .options p:hover,
-.select-box .options p.selected:hover{
+.appointment-page .select-box .options p:hover,
+.appointment-page .select-box .options p.selected:hover{
     background-color: #41b9ff;
 }
 
-.select-box .options p.selected{
+.appointment-page .select-box .options p.selected{
     color: #f1f1f1;
     background-color: #2ca4e9;
 }
@@ -126,7 +126,7 @@
     color: var(--white);
 }
 
-.booking-left textarea{
+.appointment-page .booking-left textarea{
     width: 100%;
     height: 190px;
     padding: 20px;
@@ -138,7 +138,7 @@
     border: .5px solid var(--primary);
 }
 
-.booking-left button{
+.appointment-page .booking-left button{
     width: 100%;
     height: 50px;
     outline: none;
@@ -150,7 +150,7 @@
     transition: .3s ease;
 }
 
-.booking-left button:hover{
+.appointment-page .booking-left button:hover{
     color: var(--accent);
     background-color: var(--secondary);
 }
@@ -233,47 +233,47 @@
 
 
 @media screen and (max-width: 1050px) {
-    .booking-container{
+    .appointment-page .booking-container{
         flex-direction: column;
         align-items: center;
         margin-top: 50px;
     }
 
-    .booking-left form{
+    .appointment-page .booking-left form{
         margin-top: 44px;
     }
 
-    .booking-right .work-time{
+    .appointment-page .booking-right .work-time{
         padding: 50px 40px;
     }
 }
 
 
 @media screen and (max-width: 650px) {
-    .booking-container{
+    .appointment-page .booking-container{
         margin-top: 30px;
     }
 
-    .booking-left form{
+    .appointment-page .booking-left form{
         margin-top: 34px;
     }
 
-    .booking-right .work-time{
+    .appointment-page .booking-right .work-time{
         padding: 40px 30px;
     }
 }
 
 
 @media screen and (max-width: 450px) {
-    .booking-container{
+    .appointment-page .booking-container{
         margin-top: 10px;
     }
 
-    .booking-left form{
+    .appointment-page .booking-left form{
         margin-top: 24px;
     }
 
-    .booking-right .work-time{
+    .appointment-page .booking-right .work-time{
         padding: 30px 10px;
     }
 }

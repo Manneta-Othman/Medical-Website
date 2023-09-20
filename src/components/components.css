@@ -206,106 +206,133 @@ NavBar Bottom
 /**********
 Booking
 ***********/
-.booking-form{
+.homeForm{
     flex: 1;
-    z-index: 10;
+    z-index: 11;
 }
 
-.booking .form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
-.booking .fields{
+.homeForm .fields{
+    position: relative;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 50%);
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border-radius: 20px;
+    grid-template-columns: repeat(2, 50%);
 }
 
-.booking .fields input, .booking .fields select{
-    position: absolute;
-    border: none;
-    outline: none;
+.homeForm input, .homeForm .select-box{
     width: 100%;
     height: 50px;
+    padding: 5px 10px;
+    outline: none;
+    border: 0.5px solid var(--accent);
+    color: var(--white);
     background-color: var(--primary);
-    padding: 0 20px;
-    color: var(--white, #FCFEFE);
-}
-
-.booking .fields select{
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    z-index: 1;
-}
-
-.booking .fields input, select{
-    border: 0.5px solid #f1f1f1;
-    color: #fff;
-}
-
-.booking .fields input::-webkit-calendar-picker-indicator{
-    background-color: var(--accent);
-    padding: 5px;
     border-radius: 5px;
 }
 
-.booking .fields input::placeholder{
-    color: var(--white);
+.homeForm .date, .homeForm .time{
+    position: relative;
+}
+.homeForm .date input, .homeForm .time input{
+    opacity: 0;
+    cursor: pointer;
 }
 
-.booking .fields .field{
-    position: relative;
+.homeForm .setdate{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 50px;
-    padding: 0 20px 0 0;
-    background-color: var(--primary);
-    outline: none;
-    color: var(--accent);
-    border: 0.5px solid #f1f1f1;
-}
-
-.booking .fields p{
-    line-height: 50px;
+    border: 0.5px solid var(--accent);
     color: var(--white);
-    padding: 0 20px;
+    background-color: var(--primary);
+    border-radius: 5px;
+    z-index: -1;
 }
 
-.booking .form .message{
+
+.homeForm .select-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.homeForm .select-box.show .options{
+    top: 50px;
+    left: 20px;
+    z-index: 10;   
+    opacity: 1; 
+}
+
+.homeForm .select-box .options{
+    position: absolute;
+    display: block;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    z-index: -1;
+    transition: .5s ease;
+}
+
+.homeForm .select-box .options p{
+    line-height: 40px;
+    color: var(--primary);
+    border: .1px solid var(--primary);
+    background-color: var(--accent);
+    border-radius: 2px;
+    padding: 0 20px;
+    user-select: none;
+}
+
+.homeForm .select-box .options p:hover,
+.homeForm .select-box .options p.selected:hover{
+    background-color: #41b9ff;
+}
+
+.homeForm .select-box .options p.selected{
+    color: #f1f1f1;
+    background-color: #2ca4e9;
+}
+
+::placeholder{
+    color: var(--white);
+}
+
+.homeForm textarea{
     width: 100%;
     height: 190px;
-    text-align: center;
-    background-color: var(--primary);
-    border: 0.5px solid #f1f1f1;
-}
-.booking .form .text{
-    width: 100%;
-    height: 100%;
     padding: 20px;
-    color: var(--white);
     background-color: var(--primary);
-    border: none;
+    color: var(--white);
     outline: none;
+    border-radius: 5px 5px 0 0;
     resize: none;
+    border: .5px solid var(--primary);
 }
 
-.booking .form button{
+.homeForm button{
     width: 100%;
     height: 50px;
-    align-self: center;
-    color: var(--primary);
-    background-color: var(--accent);
     outline: none;
     border: none;
-    font-weight: 500;
-    text-transform: uppercase;
+    color: var(--primary);
+    background-color: var(--accent);
+    border-radius: 0 0 5px 5px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.homeForm button:hover{
+    color: var(--accent);
+    background-color: var(--secondary);
 }
 
 /**********
@@ -853,10 +880,7 @@ NewsDetails Design
     }
 
     /*  */
-    .booking .fields{
-        display: grid;
-        grid-template-columns: 100%;
-    }
+    
 
     /* About Page */
     .sub-header .image img{

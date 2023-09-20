@@ -16,8 +16,6 @@ export default function NewsDetails() {
   const [article, setArticle] = useState(news[params - 1]);
   
   useEffect(() => {
-    console.log(params, article)
-
     let art = news.find(n => n.id === parseInt(params))
 
     if(art) {

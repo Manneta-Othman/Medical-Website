@@ -8,7 +8,6 @@ const BookingForm = () => {
     const handleSubmit = (e) => {
       e.preventDefault()
       
-
     }
 
     return ( 

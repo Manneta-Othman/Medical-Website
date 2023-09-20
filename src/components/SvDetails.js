@@ -20,7 +20,7 @@ export default function SvDetails() {
   
   const params = useParams().id
   
-  const [sv, setSv] = useState(services[params]);
+  const [sv, setSv] = useState(services[params-1]);
   
   useEffect(() => {
     let art = services.find(n => n.id === parseInt(params))
