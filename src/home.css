@@ -398,6 +398,12 @@ Media Query
     display: none;
     }
 
+    /* welcome */
+    .welcome .content{
+        margin: 61px auto 61px auto;
+    }
+
+
     /* services */
     .services-right{
         display: none;

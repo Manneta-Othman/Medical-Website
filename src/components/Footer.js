@@ -8,7 +8,7 @@ import {FaFacebookF, FaInstagram} from 'react-icons/fa'
 export function Footer() {
   return (
     <footer>
-        <div className="container padding">
+        <div className="container">
           <div className="footer-top">
             <div className="col logo">
               <h1>Meddical</h1>
