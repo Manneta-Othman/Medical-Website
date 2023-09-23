@@ -24,11 +24,9 @@ const Navebar = () => {
     useEffect(() => {
 
         const handleShow = (e) => {
-
             if(!menuRef.current.contains(e.target)) {
                 setShowMenu(false)
             }
-
         }
 
         document.addEventListener('mouseup', handleShow)
@@ -51,7 +49,7 @@ const Navebar = () => {
 
         return(
                 <Link className={isActive ? 'link active' : 'link'} to={props.to} > {children} </Link>
-        ) 
+        )
     }
 
     function handleSearch () {
